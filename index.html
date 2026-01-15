@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Magalhães Jr. - Advocacia Previdenciária</title>
+    <meta name="description" content="Especialista em INSS, RPPS e Previdência Privada. Mais de 20 anos de experiência. Atendimento online e presencial no Piauí.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azul: {
+                            950: '#020617', // Fundo Dark Premium
+                            900: '#0f172a', 
+                            800: '#1e3a8a', 
+                            700: '#1d4ed8',
+                        },
+                        dourado: {
+                            600: '#b45309',
+                            500: '#d97706', // Ouro Rico
+                            400: '#fbbf24', // Ouro Brilhante
+                            100: '#fef3c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'gold': '0 4px 20px -2px rgba(217, 119, 6, 0.3)',
+                        'glow': '0 0 15px rgba(251, 191, 36, 0.3)',
+                    },
+                    screens: {
+                        'xs': '375px', // Breakpoint extra para celulares pequenos
+                    },
+                    dropShadow: {
+                        'hero': '0 10px 15px rgba(0, 0, 0, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-pattern {
+            background-image: linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a), linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b), linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            opacity: 0.05;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #20ba5a;
+        }
+        .whatsapp-pulse {
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-dourado-500 selection:text-white overflow-x-hidden">
+
+    <!-- BOTÃO WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5586988313577?text=Olá, vim pelo site e gostaria de atendimento." class="whatsapp-float whatsapp-pulse" target="_blank">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
+
+    <!-- 1. HEADER & HERO INTEGRADOS (Estilo Premium Dark) -->
+    <!-- Restaurado padding bottom para enquadrar a imagem retangular -->
+    <header class="bg-azul-950 text-white relative overflow-hidden pb-12 md:pb-20 pt-4">
+        <!-- Background Decorativo -->
+        <div class="absolute inset-0 bg-pattern"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-azul-950/90 via-azul-900/95 to-azul-950/100"></div>
+
+        <div class="container mx-auto px-6 relative z-10 h-full flex flex-col">
+            
+            <!-- Topo: Logo e Navegação -->
+            <div class="flex flex-col md:flex-row justify-between items-center py-4 mb-8 md:mb-12 shrink-0">
+                <!-- LOGO SEM FUNDO -->
+                <div class="mb-6 md:mb-0 w-full md:w-auto flex justify-center">
+                    <img src="logo qualidade sem fundo.png" alt="Logo Carlos Magalhães Jr." class="h-28 md:h-32 object-contain block drop-shadow-xl">
+                </div>
+                
+                <div class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
+                    <a href="#sobre" class="hover:text-dourado-400 transition">Sobre</a>
+                    <a href="#atuacao" class="hover:text-dourado-400 transition">Áreas de Atuação</a>
+                    <a href="#contato" class="hover:text-dourado-400 transition">Escritórios</a>
+                </div>
+                
+                <a href="https://wa.me/5586988313577" class="hidden md:inline-block text-sm font-bold text-dourado-400 border border-dourado-500/50 py-2 px-6 rounded-full hover:bg-dourado-500 hover:text-white transition">
+                    (86) 9 8831-3577
+                </a>
+            </div>
+
+            <!-- Conteúdo Hero (Centralizado) -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 flex-grow">
+                
+                <!-- Coluna Texto -->
+                <div class="w-full md:w-1/2 text-center md:text-left z-20">
+                    <div class="inline-flex items-center gap-2 bg-dourado-500/20 border border-dourado-500/40 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-dourado-500 animate-pulse"></span>
+                        <span class="text-dourado-400 text-xs font-bold uppercase tracking-wider">Atendimento Nacional Online</span>
+                    </div>
+
+                    <h1 class="text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+                        Seu Direito Previdenciário <br class="hidden md:block">
+                        <span class="text-gradient-gold block mt-2 md:inline md:mt-0">Defendido com Excelência</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-base md:text-xl mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 px-2 md:px-0">
+                        Especialista em <strong>INSS, RPPS e Previdência Privada</strong>. Mais de 20 anos de experiência garantindo o melhor benefício para o seu futuro.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start px-4 md:px-0 mb-6">
+                        <a href="https://wa.me/5586988313577?text=Quero%20agendar%20uma%20consulta." 
+                           class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-8 rounded-xl shadow-gold transform transition hover:-translate-y-1 text-lg group w-full sm:w-auto">
+                            <i data-lucide="message-circle" class="w-5 h-5 group-hover:animate-bounce"></i>
+                            Agendar Consulta
+                        </a>
+                        <a href="#atuacao" 
+                           class="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-semibold py-4 px-8 rounded-xl backdrop-blur-sm transition w-full sm:w-auto">
+                            Ver Áreas de Atuação
+                        </a>
+                    </div>
+                    
+                    <p class="text-dourado-500 font-bold text-sm tracking-widest uppercase opacity-80">
+                        OAB-PI 6.847
+                    </p>
+                </div>
+
+                <!-- Coluna Imagem (Foto Retangular no Escritório) -->
+                <div class="w-full md:w-1/2 flex justify-center relative px-0 z-10">
+                    
+                    <!-- Efeito de brilho atrás da foto -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-azul-700/20 blur-[60px] rounded-full pointer-events-none"></div>
+
+                    <div class="relative w-full max-w-md mx-auto">
+                        <!-- Foto do Dr. Carlos no escritório (Retangular) -->
+                        <img src="dr-carlos-2.jpg" alt="Dr. Carlos Magalhães" class="rounded-2xl shadow-2xl border-2 border-white/10 w-full h-auto object-cover transform md:rotate-2 hover:rotate-0 transition duration-500">
+                        
+                        <!-- Card Flutuante "Causas Ganhas" -->
+                        <div class="absolute -bottom-6 -left-4 bg-white/95 backdrop-blur p-4 rounded-xl shadow-xl border-l-4 border-dourado-500 flex items-center gap-3 animate-bounce hidden sm:flex">
+                            <div class="bg-azul-100 p-2 rounded-full text-azul-900">
+                                <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-azul-900 leading-none">+2000</p>
+                                <p class="text-xs text-slate-500 font-semibold uppercase">Causas Ganhas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. BARRA DE AUTORIDADE -->
+    <section class="bg-white border-b border-slate-200 py-10 relative z-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                <div class="p-4">
+                    <span class="block text-4xl font-bold text-azul-900 font-serif mb-1">+20 Anos</span>
+                    <span class="text-sm text-slate-500 uppercase tracking-widest font-semibold">De Experiência Jurídica</span>
+                </div>
+                <div class="p-4">
+                    <span class="block text-4xl font-bold text-dourado-600 font-serif mb-1">Referência</span>
+                    <span class="text-sm text-slate-500 uppercase tracking-widest font-semibold">Em Direito Previdenciário</span>
+                </div>
+                <div class="p-4">
+                    <span class="block text-4xl font-bold text-azul-900 font-serif mb-1">100%</span>
+                    <span class="text-sm text-slate-500 uppercase tracking-widest font-semibold">Compromisso com o Cliente</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SOBRE O ADVOGADO (Foto de Perfil Restaurada) -->
+    <section id="sobre" class="py-16 md:py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+                <div class="w-full md:w-1/3 relative px-4 md:px-0">
+                     <div class="absolute inset-0 bg-dourado-500 rounded-full blur-2xl opacity-20 transform translate-x-4 translate-y-4"></div>
+                     <!-- Usando a foto de perfil aqui -->
+                     <img src="dr-carlos-1.jpg" alt="Perfil Dr. Carlos" class="relative rounded-2xl shadow-lg border-4 border-white w-full object-cover aspect-[4/5]">
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h4 class="text-dourado-600 font-bold uppercase tracking-wider text-sm mb-2 text-center md:text-left">Sobre o Especialista</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-azul-950 mb-6 text-center md:text-left">Dr. Carlos Magalhães Jr.</h2>
+                    <div class="space-y-4 text-slate-600 text-lg leading-relaxed text-justify px-2 md:px-0">
+                        <p>
+                            Com uma trajetória de mais de duas décadas pautada na <strong>ética, transparência e combatividade</strong>, o Dr. Carlos Magalhães Jr. tornou-se uma referência na defesa dos direitos de segurados e servidores públicos.
+                        </p>
+                        <p>
+                            Entendemos que por trás de cada benefício negado existe uma família e uma história de vida. Nosso escritório combina conhecimento técnico aprofundado com um atendimento acolhedor, garantindo que você não enfrente a burocracia do INSS sozinho.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-slate-200 flex flex-wrap gap-4 justify-center md:justify-start">
+                        <span class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm text-sm font-semibold text-azul-900 border border-slate-200">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-dourado-500"></i> Especialista Previdenciário
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm text-sm font-semibold text-azul-900 border border-slate-200">
+                            <i data-lucide="award" class="w-4 h-4 text-dourado-500"></i> OAB-PI 6.847
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ÁREAS DE ATUAÇÃO (Contraste melhorado) -->
+    <section id="atuacao" class="py-16 md:py-20 bg-slate-100 relative">
+        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-slate-50 to-slate-100"></div>
+        
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-dourado-600 font-bold uppercase tracking-wider text-sm">Nossos Serviços</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-azul-950 mt-2">Atuação Especializada</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card Template -->
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-dourado-500/10 rounded-bl-full -mr-4 -mt-4 transition group-hover:bg-dourado-500/20"></div>
+                    
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="hourglass" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Aposentadoria por Idade</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Planejamento e requerimento administrativo e judicial.</p>
+                </div>
+
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="building-2" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">RPPS (Servidores)</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Análise de regras específicas para servidores públicos.</p>
+                </div>
+
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="piggy-bank" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Previdência Privada</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Revisão e defesa de contratos complementares.</p>
+                </div>
+
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="activity" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Incapacidade Temporária</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Antigo Auxílio-Doença. Reestabelecimento de benefício.</p>
+                </div>
+
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="armchair" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Incapacidade Permanente</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Antiga Aposentadoria por Invalidez.</p>
+                </div>
+
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="users" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">BPC / LOAS</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Benefício assistencial para idosos e deficientes.</p>
+                </div>
+
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="tractor" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Aposentadoria Rural</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Para o trabalhador do campo e agricultura familiar.</p>
+                </div>
+
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="file-search" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Planejamento</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Cálculos e planejamento para o melhor benefício.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                 <a href="https://wa.me/5586988313577?text=Tenho uma dúvida sobre um benefício." 
+                   class="inline-block bg-azul-950 hover:bg-azul-900 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 w-full md:w-auto">
+                    Falar com Especialista
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LOCALIZAÇÃO E CONTATO (Completo) -->
+    <section id="contato" class="py-20 bg-azul-950 text-white relative">
+        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+        
+        <div class="container mx-auto px-6 max-w-6xl relative z-10">
+            <div class="text-center mb-16">
+                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-2">Nossas Unidades</h2>
+                 <p class="text-slate-400">Atendimento presencial de excelência em todo o Piauí</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card União -->
+                <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
+                    <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> União – PI
+                    </h3>
+                    <p class="text-sm text-slate-300 mb-4 flex-grow">Rua 19 de Novembro, nº 5, Loja 5, Centro.</p>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <a href="https://share.google/sb3ukzf37xRuy0bqO" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                            <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
+                        </a>
+                        <a href="https://wa.me/5586981563577" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Castelo do Piauí -->
+                <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
+                    <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Castelo do Piauí
+                    </h3>
+                    <p class="text-sm text-slate-300 mb-4 flex-grow">Rua Sete de Setembro, nº 91.</p>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <a href="https://maps.app.goo.gl/fffPp27Pgy7AbeDi8" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                            <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
+                        </a>
+                        <a href="https://wa.me/5586981563577" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Alto Longá -->
+                <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
+                    <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Alto Longá – PI
+                    </h3>
+                    <p class="text-sm text-slate-300 mb-4 flex-grow">Rua Duque de Caxias, 333, Centro.</p>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <a href="https://maps.app.goo.gl/2ktCTvrkSrNCedjy8" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                            <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
+                        </a>
+                        <a href="https://wa.me/5586999983393" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Pedro II -->
+                <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
+                    <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                         <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Pedro II – PI
+                    </h3>
+                    <p class="text-sm text-slate-300 mb-4 flex-grow">Rua Estrela Azul, nº 37, Santa Fé.</p>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <a href="https://maps.app.goo.gl/hFSZ6FcC7PWmZvSi9" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                            <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
+                        </a>
+                        <a href="https://wa.me/5586981841227" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Milton Brandão -->
+                <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
+                    <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Milton Brandão
+                    </h3>
+                    <p class="text-sm text-slate-300 mb-4 flex-grow">Rua Francisco Avelino, S/N, Centro.</p>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Francisco+Avelino+Centro+Milton+Brandao+PI" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                            <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
+                        </a>
+                        <a href="https://wa.me/5586981260287" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Parnaíba -->
+                <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
+                    <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Parnaíba – PI
+                    </h3>
+                    <p class="text-sm text-slate-300 mb-4 flex-grow">Av. Leonardo de Carvalho Castelo Branco, 1943</p>
+                    <div class="space-y-3 mt-auto">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Av+Leonardo+de+Carvalho+Castelo+Branco+1943+Parnaiba+PI" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                                <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
+                            </a>
+                            <a href="https://g.page/r/CfYTcnENeks8EAE/review" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-dourado-500 bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                                <i data-lucide="star" class="w-3 h-3"></i> Avaliar
+                            </a>
+                        </div>
+                        <a href="https://wa.me/5586981722706" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition w-full">
+                            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                 <!-- Teresina -->
+                 <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
+                    <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Teresina – PI
+                    </h3>
+                    <p class="text-sm text-slate-300 mb-4 flex-grow">Rua Eletricista Guilherme, nº 643, Fátima.</p>
+                    <div class="space-y-3 mt-auto">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eletricista+Guilherme+643+Fatima+Teresina+PI" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                                <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
+                            </a>
+                            <a href="https://g.page/r/CW2DsQxxPyp9EAE/review" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-dourado-500 bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
+                                <i data-lucide="star" class="w-3 h-3"></i> Avaliar
+                            </a>
+                        </div>
+                        <a href="https://wa.me/5586999983393" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition w-full">
+                            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ (AZUL ESCURO) -->
+    <footer class="bg-azul-950 text-slate-300 py-12 border-t border-dourado-500/20 relative">
+        <div class="absolute inset-0 bg-pattern opacity-5"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <img src="logo qualidade sem fundo.png" alt="Logo Rodapé" class="h-28 mx-auto mb-6 opacity-100 filter drop-shadow-lg">
+            
+            <h3 class="text-2xl font-serif text-white font-bold mb-2">Carlos Magalhães Jr.</h3>
+            <p class="text-dourado-500 font-semibold tracking-wide text-sm mb-6 uppercase">Advocacia Previdenciária Especializada</p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6 text-sm text-slate-400 mb-8">
+                 <a href="#sobre" class="hover:text-white transition">Sobre</a>
+                 <a href="#atuacao" class="hover:text-white transition">Áreas de Atuação</a>
+                 <a href="#contato" class="hover:text-white transition">Escritórios</a>
+                 <a href="https://wa.me/5586988313577" class="hover:text-white transition">Contato</a>
+            </div>
+
+            <p class="text-xs max-w-lg mx-auto mb-4 leading-relaxed text-slate-500">
+                Este site tem caráter meramente informativo e educacional. O advogado atua estritamente em conformidade com o Código de Ética e Disciplina da OAB. Resultados passados não garantem resultados futuros.
+            </p>
+            <p class="text-sm font-bold text-dourado-600/80 mb-2">CNPJ: 59.906.021/0001-13</p>
+            <p class="text-sm font-bold text-dourado-600/80">OAB-PI 6.847</p>
+            
+            <div class="mt-8 pt-8 border-t border-white/5 text-[10px] text-slate-600 uppercase tracking-widest">
+                &copy; 2024 Carlos Magalhães Jr. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Init Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

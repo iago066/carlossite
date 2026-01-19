@@ -13,6 +13,12 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-17873329495');
+
+      // Função para disparar a conversão de WhatsApp
+      function reportWhatsAppConversion() {
+        gtag('event', 'conversion', {'send_to': 'AW-17873329495/UfAPCMGW2-gbENe61cpC'});
+        return true;
+      }
     </script>
 
     <title>Carlos Magalhães Jr. - Advocacia Previdenciária</title>
@@ -113,7 +119,7 @@
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-dourado-500 selection:text-white overflow-x-hidden">
 
     <!-- BOTÃO WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5586988313577?text=Olá, vim pelo site e gostaria de atendimento." class="whatsapp-float whatsapp-pulse" target="_blank">
+    <a href="https://wa.me/5586988313577?text=Olá, vim pelo site e gostaria de atendimento." class="whatsapp-float whatsapp-pulse" target="_blank" onclick="reportWhatsAppConversion()">
         <i data-lucide="message-circle" class="w-8 h-8"></i>
     </a>
 
@@ -139,7 +145,7 @@
                     <a href="#contato" class="hover:text-dourado-400 transition">Escritórios</a>
                 </div>
                 
-                <a href="https://wa.me/5586988313577" class="hidden md:inline-block text-sm font-bold text-dourado-400 border border-dourado-500/50 py-2 px-6 rounded-full hover:bg-dourado-500 hover:text-white transition">
+                <a href="https://wa.me/5586988313577" class="hidden md:inline-block text-sm font-bold text-dourado-400 border border-dourado-500/50 py-2 px-6 rounded-full hover:bg-dourado-500 hover:text-white transition" onclick="reportWhatsAppConversion()">
                     (86) 9 8831-3577
                 </a>
             </div>
@@ -165,7 +171,7 @@
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start px-4 md:px-0 mb-6">
                         <a href="https://wa.me/5586988313577?text=Quero%20agendar%20uma%20consulta." 
-                           class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-8 rounded-xl shadow-gold transform transition hover:-translate-y-1 text-lg group w-full sm:w-auto">
+                           class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-8 rounded-xl shadow-gold transform transition hover:-translate-y-1 text-lg group w-full sm:w-auto" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-5 h-5 group-hover:animate-bounce"></i>
                             Agendar Consulta
                         </a>
@@ -341,7 +347,7 @@
 
             <div class="mt-12 text-center">
                  <a href="https://wa.me/5586988313577?text=Tenho uma dúvida sobre um benefício." 
-                   class="inline-block bg-azul-950 hover:bg-azul-900 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 w-full md:w-auto">
+                   class="inline-block bg-azul-950 hover:bg-azul-900 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 w-full md:w-auto" onclick="reportWhatsAppConversion()">
                     Falar com Especialista
                 </a>
             </div>
@@ -370,7 +376,7 @@
                         <a href="https://share.google/sb3ukzf37xRuy0bqO" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
                             <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
                         </a>
-                        <a href="https://wa.me/5586981563577" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                        <a href="https://wa.me/5586981563577" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
                         </a>
                     </div>
@@ -386,7 +392,7 @@
                         <a href="https://maps.app.goo.gl/fffPp27Pgy7AbeDi8" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
                             <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
                         </a>
-                        <a href="https://wa.me/5586981563577" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                        <a href="https://wa.me/5586981563577" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
                         </a>
                     </div>
@@ -402,7 +408,7 @@
                         <a href="https://maps.app.goo.gl/2ktCTvrkSrNCedjy8" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
                             <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
                         </a>
-                        <a href="https://wa.me/5586999983393" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                        <a href="https://wa.me/5586999983393" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
                         </a>
                     </div>
@@ -418,7 +424,7 @@
                         <a href="https://maps.app.goo.gl/hFSZ6FcC7PWmZvSi9" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
                             <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
                         </a>
-                        <a href="https://wa.me/5586981841227" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                        <a href="https://wa.me/5586981841227" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
                         </a>
                     </div>
@@ -434,13 +440,13 @@
                         <a href="https://www.google.com/maps/search/?api=1&query=Rua+Francisco+Avelino+Centro+Milton+Brandao+PI" target="_blank" class="flex items-center justify-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 py-2.5 rounded transition">
                             <i data-lucide="map" class="w-3 h-3"></i> Abrir Mapa
                         </a>
-                        <a href="https://wa.me/5586981260287" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition">
+                        <a href="https://wa.me/5586981260287" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <!-- Parnaíba -->
+                <!-- Parnaíba (Atualizado com botão Whats) -->
                 <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
                     <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
                         <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Parnaíba – PI
@@ -455,13 +461,13 @@
                                 <i data-lucide="star" class="w-3 h-3"></i> Avaliar
                             </a>
                         </div>
-                        <a href="https://wa.me/5586981722706" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition w-full">
+                        <a href="https://wa.me/5586981722706" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition w-full" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
                         </a>
                     </div>
                 </div>
 
-                 <!-- Teresina -->
+                 <!-- Teresina (Atualizado com botão Whats) -->
                  <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
                     <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
                         <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Teresina – PI
@@ -476,7 +482,7 @@
                                 <i data-lucide="star" class="w-3 h-3"></i> Avaliar
                             </a>
                         </div>
-                        <a href="https://wa.me/5586999983393" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition w-full">
+                        <a href="https://wa.me/5586999983393" class="flex items-center justify-center gap-2 text-xs font-bold text-azul-950 bg-green-500 hover:bg-green-400 py-2.5 rounded transition w-full" onclick="reportWhatsAppConversion()">
                             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
                         </a>
                     </div>
@@ -498,7 +504,7 @@
                  <a href="#sobre" class="hover:text-white transition">Sobre</a>
                  <a href="#atuacao" class="hover:text-white transition">Áreas de Atuação</a>
                  <a href="#contato" class="hover:text-white transition">Escritórios</a>
-                 <a href="https://wa.me/5586988313577" class="hover:text-white transition">Contato</a>
+                 <a href="https://wa.me/5586988313577" class="hover:text-white transition" onclick="reportWhatsAppConversion()">Contato</a>
             </div>
 
             <p class="text-xs max-w-lg mx-auto mb-4 leading-relaxed text-slate-500">

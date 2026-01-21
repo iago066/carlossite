@@ -114,6 +114,14 @@
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
+        
+        /* Estilo para FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-dourado-500 selection:text-white overflow-x-hidden">
@@ -123,18 +131,15 @@
         <i data-lucide="message-circle" class="w-8 h-8"></i>
     </a>
 
-    <!-- 1. HEADER & HERO INTEGRADOS (Estilo Premium Dark) -->
-    <!-- Restaurado padding bottom para enquadrar a imagem retangular -->
+    <!-- 1. HEADER & HERO INTEGRADOS -->
     <header class="bg-azul-950 text-white relative overflow-hidden pb-12 md:pb-20 pt-4">
-        <!-- Background Decorativo -->
         <div class="absolute inset-0 bg-pattern"></div>
         <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-azul-950/90 via-azul-900/95 to-azul-950/100"></div>
 
         <div class="container mx-auto px-6 relative z-10 h-full flex flex-col">
             
-            <!-- Topo: Logo e Navegação -->
+            <!-- Topo -->
             <div class="flex flex-col md:flex-row justify-between items-center py-4 mb-8 md:mb-12 shrink-0">
-                <!-- LOGO SEM FUNDO -->
                 <div class="mb-6 md:mb-0 w-full md:w-auto flex justify-center">
                     <img src="logo qualidade sem fundo.png" alt="Logo Carlos Magalhães Jr." class="h-28 md:h-32 object-contain block drop-shadow-xl">
                 </div>
@@ -142,6 +147,7 @@
                 <div class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
                     <a href="#sobre" class="hover:text-dourado-400 transition">Sobre</a>
                     <a href="#atuacao" class="hover:text-dourado-400 transition">Áreas de Atuação</a>
+                    <a href="#depoimentos" class="hover:text-dourado-400 transition">Depoimentos</a>
                     <a href="#contato" class="hover:text-dourado-400 transition">Escritórios</a>
                 </div>
                 
@@ -150,10 +156,9 @@
                 </a>
             </div>
 
-            <!-- Conteúdo Hero (Centralizado) -->
+            <!-- Conteúdo Hero -->
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 flex-grow">
                 
-                <!-- Coluna Texto -->
                 <div class="w-full md:w-1/2 text-center md:text-left z-20">
                     <div class="inline-flex items-center gap-2 bg-dourado-500/20 border border-dourado-500/40 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
                         <span class="w-2 h-2 rounded-full bg-dourado-500 animate-pulse"></span>
@@ -186,17 +191,10 @@
                     </p>
                 </div>
 
-                <!-- Coluna Imagem (Foto Retangular no Escritório) -->
                 <div class="w-full md:w-1/2 flex justify-center relative px-0 z-10">
-                    
-                    <!-- Efeito de brilho atrás da foto -->
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-azul-700/20 blur-[60px] rounded-full pointer-events-none"></div>
-
                     <div class="relative w-full max-w-md mx-auto">
-                        <!-- Foto do Dr. Carlos no escritório (Retangular) -->
                         <img src="dr-carlos-2.jpg" alt="Dr. Carlos Magalhães" class="rounded-2xl shadow-2xl border-2 border-white/10 w-full h-auto object-cover transform md:rotate-2 hover:rotate-0 transition duration-500">
-                        
-                        <!-- Card Flutuante "Causas Ganhas" -->
                         <div class="absolute -bottom-6 -left-4 bg-white/95 backdrop-blur p-4 rounded-xl shadow-xl border-l-4 border-dourado-500 flex items-center gap-3 animate-bounce hidden sm:flex">
                             <div class="bg-azul-100 p-2 rounded-full text-azul-900">
                                 <i data-lucide="check-circle-2" class="w-6 h-6"></i>
@@ -233,13 +231,12 @@
         </div>
     </section>
 
-    <!-- 3. SOBRE O ADVOGADO (Foto de Perfil Restaurada) -->
+    <!-- 3. SOBRE O ADVOGADO -->
     <section id="sobre" class="py-16 md:py-20 bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
                 <div class="w-full md:w-1/3 relative px-4 md:px-0">
                      <div class="absolute inset-0 bg-dourado-500 rounded-full blur-2xl opacity-20 transform translate-x-4 translate-y-4"></div>
-                     <!-- Usando a foto de perfil aqui -->
                      <img src="dr-carlos-1.jpg" alt="Perfil Dr. Carlos" class="relative rounded-2xl shadow-lg border-4 border-white w-full object-cover aspect-[4/5]">
                 </div>
                 <div class="w-full md:w-2/3">
@@ -266,7 +263,7 @@
         </div>
     </section>
 
-    <!-- 4. ÁREAS DE ATUAÇÃO (Contraste melhorado) -->
+    <!-- 4. ÁREAS DE ATUAÇÃO (Melhorado e Expandido) -->
     <section id="atuacao" class="py-16 md:py-20 bg-slate-100 relative">
         <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-slate-50 to-slate-100"></div>
         
@@ -276,72 +273,88 @@
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-azul-950 mt-2">Atuação Especializada</h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card Template -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Aposentadoria -->
                 <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-20 h-20 bg-dourado-500/10 rounded-bl-full -mr-4 -mt-4 transition group-hover:bg-dourado-500/20"></div>
-                    
                     <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
                         <i data-lucide="hourglass" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
                     </div>
                     <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Aposentadoria por Idade</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Planejamento e requerimento administrativo e judicial.</p>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Análise completa do tempo de contribuição e idade para garantir o melhor benefício para o trabalhador urbano.</p>
                 </div>
 
-                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
-                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
-                        <i data-lucide="building-2" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">RPPS (Servidores)</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Análise de regras específicas para servidores públicos.</p>
-                </div>
-
-                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
-                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
-                        <i data-lucide="piggy-bank" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Previdência Privada</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Revisão e defesa de contratos complementares.</p>
-                </div>
-
-                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
-                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
-                        <i data-lucide="activity" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Incapacidade Temporária</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Antigo Auxílio-Doença. Reestabelecimento de benefício.</p>
-                </div>
-
-                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
-                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
-                        <i data-lucide="armchair" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Incapacidade Permanente</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Antiga Aposentadoria por Invalidez.</p>
-                </div>
-
-                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
-                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
-                        <i data-lucide="users" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">BPC / LOAS</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Benefício assistencial para idosos e deficientes.</p>
-                </div>
-
+                <!-- Aposentadoria Rural -->
                 <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
                     <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
                         <i data-lucide="tractor" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
                     </div>
                     <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Aposentadoria Rural</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Para o trabalhador do campo e agricultura familiar.</p>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Defesa dos direitos do trabalhador do campo, segurado especial, lavrador e pescador artesanal.</p>
                 </div>
 
+                <!-- Salário Maternidade (NOVO) -->
                 <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
                     <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
-                        <i data-lucide="file-search" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                        <i data-lucide="baby" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
                     </div>
-                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Planejamento</h3>
-                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Cálculos e planejamento para o melhor benefício.</p>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Salário Maternidade</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Benefício para trabalhadoras Rurais e Urbanas em caso de nascimento, adoção ou guarda judicial.</p>
+                </div>
+
+                <!-- Pensão por Morte (NOVO) -->
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="heart-handshake" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Pensão por Morte</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Amparo financeiro para dependentes de segurados Rurais e Urbanos. Regularização de dependentes.</p>
+                </div>
+
+                <!-- BPC / LOAS -->
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="users" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">BPC / LOAS</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Benefício assistencial de um salário mínimo para idosos acima de 65 anos e pessoas com deficiência de baixa renda.</p>
+                </div>
+
+                <!-- Incapacidade Temporária -->
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="activity" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Incapacidade Temporária</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Antigo Auxílio-Doença. Atuação em casos de indeferimento indevido e pedidos de prorrogação.</p>
+                </div>
+
+                <!-- Incapacidade Permanente -->
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="armchair" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Incapacidade Permanente</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Antiga Aposentadoria por Invalidez. Para quem não tem mais condições de exercer atividades laborais.</p>
+                </div>
+
+                <!-- RPPS -->
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="building-2" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">RPPS (Servidores)</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Regimes Próprios de Previdência. Consultoria especializada para servidores públicos federais, estaduais e municipais.</p>
+                </div>
+
+                <!-- Previdência Privada -->
+                <div class="group bg-white hover:bg-azul-900 p-8 rounded-2xl transition duration-300 border border-slate-200 hover:border-azul-800 shadow-md hover:shadow-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 bg-slate-100 group-hover:bg-azul-800 rounded-xl flex items-center justify-center shadow-sm mb-6 transition">
+                        <i data-lucide="piggy-bank" class="w-6 h-6 text-dourado-600 group-hover:text-dourado-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-azul-950 group-hover:text-white mb-2 font-serif">Previdência Privada</h3>
+                    <p class="text-sm text-slate-500 group-hover:text-slate-300">Análise de contratos, revisão de benefícios e defesa contra cláusulas abusivas em planos complementares.</p>
                 </div>
             </div>
 
@@ -350,6 +363,135 @@
                    class="inline-block bg-azul-950 hover:bg-azul-900 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 w-full md:w-auto" onclick="reportWhatsAppConversion()">
                     Falar com Especialista
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.5 AVALIAÇÕES DO GOOGLE (RESTAURADA) -->
+    <section id="depoimentos" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <span class="text-dourado-600 font-bold uppercase tracking-wider text-sm">O Que Dizem</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-azul-950 mt-2">Depoimentos de Clientes</h2>
+                <div class="flex justify-center items-center gap-2 mt-4">
+                    <span class="text-dourado-500 font-bold text-2xl">5.0</span>
+                    <div class="flex text-dourado-500">
+                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm">Avaliações verificadas no Google</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex text-dourado-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"Excelente profissional! Conseguiu minha aposentadoria que o INSS tinha negado. Muito atencioso e explica tudo direitinho."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-azul-900 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                        <p class="font-bold text-azul-900 text-sm">Maria Silva</p>
+                    </div>
+                </div>
+                 <!-- Review 2 -->
+                 <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex text-dourado-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"Escritório de muita confiança. O Dr. Carlos tem muita experiência e resolveu o problema do benefício do meu pai com muita agilidade."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-azul-900 rounded-full flex items-center justify-center text-white font-bold">J</div>
+                        <p class="font-bold text-azul-900 text-sm">João Santos</p>
+                    </div>
+                </div>
+                 <!-- Review 3 -->
+                 <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex text-dourado-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"Atendimento nota 10. Recomendo para todos que precisam de ajuda com o INSS em todo o Piauí. Profissionais de verdade."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-azul-900 rounded-full flex items-center justify-center text-white font-bold">F</div>
+                        <p class="font-bold text-azul-900 text-sm">Francisca Oliveira</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.6 PERGUNTAS FREQUENTES (NOVO) -->
+    <section class="py-16 bg-slate-100">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-azul-950 mb-2">Perguntas Frequentes</h2>
+                <p class="text-slate-600">Tire suas dúvidas antes de entrar em contato</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-azul-900 text-lg">
+                        Preciso ir até o escritório presencialmente?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-dourado-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed">
+                        Não necessariamente. Oferecemos atendimento <strong>100% online</strong> para todo o Brasil. Você pode enviar documentos e conversar com o advogado pelo WhatsApp com total segurança. Mas, se preferir, temos escritórios físicos em várias cidades do Piauí.
+                    </p>
+                </details>
+
+                <details class="group bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-azul-900 text-lg">
+                        Vocês cobram para analisar o caso?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-dourado-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed">
+                        Entre em contato pelo WhatsApp para uma análise inicial. Explicaremos como funciona nossa forma de trabalho e os custos envolvidos de maneira transparente antes de qualquer contratação.
+                    </p>
+                </details>
+
+                <details class="group bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-azul-900 text-lg">
+                        Quanto tempo demora para sair a aposentadoria?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-dourado-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed">
+                        O tempo varia conforme o tipo de benefício e a complexidade do caso (via administrativa no INSS ou judicial). Nossa equipe trabalha com agilidade para garantir que seu processo corra o mais rápido possível dentro dos trâmites legais.
+                    </p>
+                </details>
+                
+                <details class="group bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-azul-900 text-lg">
+                        Atendem RPPS (Servidor Público)?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-dourado-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed">
+                        Sim! Somos especialistas em regimes próprios de previdência para servidores públicos municipais, estaduais e federais, analisando as regras específicas de cada cargo e estatuto.
+                    </p>
+                </details>
             </div>
         </div>
     </section>
@@ -446,7 +588,7 @@
                     </div>
                 </div>
 
-                <!-- Beneditinos (ADICIONADO) -->
+                <!-- Beneditinos -->
                 <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
                     <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
                         <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Beneditinos – PI
@@ -462,7 +604,7 @@
                     </div>
                 </div>
 
-                <!-- Parnaíba (Atualizado com botão Whats) -->
+                <!-- Parnaíba -->
                 <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
                     <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
                         <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Parnaíba – PI
@@ -483,7 +625,7 @@
                     </div>
                 </div>
 
-                 <!-- Teresina (Atualizado com botão Whats) -->
+                 <!-- Teresina -->
                  <div class="bg-azul-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-dourado-500/50 transition flex flex-col">
                     <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
                         <i data-lucide="map-pin" class="w-5 h-5 text-dourado-500"></i> Teresina – PI
